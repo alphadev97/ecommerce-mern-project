@@ -17,8 +17,12 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
     },
   });
 
+  const token = user.getJWTToken();
+
   res.status(200).json({
     success: true,
-    user,
+    token,
   });
 });
+
+// Login User
