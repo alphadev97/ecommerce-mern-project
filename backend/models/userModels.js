@@ -60,4 +60,6 @@ userSchema.methods.comparePassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
+// Generating reset password token
+
 module.exports = mongoose.model("User", userSchema);
