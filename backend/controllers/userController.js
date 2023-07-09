@@ -60,3 +60,29 @@ exports.logout = catchAsyncError(async (req, res, next) => {
     message: "Logged Out Successfully",
   });
 });
+
+// Forgott Password
+exports.forgotPassword = catchAsyncError(async (req, res, next) => {
+  const user = User.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(new ErrorHandler("User not found", 404));
+  }
+
+  // Get reset password token
+  const resetToken = user.getResetPasswordToken();
+
+  await user.save({ validateBeforeSave: false });
+
+  const resetPasswordUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/api/v1/password/reset/${resetToken}`;
+
+  const message = `Your reset password token is :- \n\n ${resetPasswordUrl} \n\n if you have not requested this email then please contact administrator or ignore this email `;
+
+  try {
+  } catch (error) {
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+  }
+});
