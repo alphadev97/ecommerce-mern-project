@@ -179,7 +179,6 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
   };
 
   // We will add cloudinary later
-  // We will add cloudinary later
 
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
     new: true,
@@ -189,5 +188,33 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+  });
+});
+
+// Get All Users
+
+exports.getAllUsers = catchAsyncError(async (req, res, next) => {
+  const users = await User.find();
+
+  res.status(200).json({
+    success: true,
+    users,
+  });
+});
+
+// Get Single User - Admin
+
+exports.getSingleUser = catchAsyncError(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    return next(
+      new ErrorHandler(`User does not exist with Id: ${req.params.id}`)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    user,
   });
 });
