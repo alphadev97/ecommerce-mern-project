@@ -179,6 +179,7 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
   };
 
   // We will add cloudinary later
+  // We will add cloudinary later
 
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
     new: true,
