@@ -2,6 +2,7 @@ const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const User = require("../models/userModels");
 const sendToken = require("../utils/jwtToken");
+const sendEmail = require("../utils/sendEmail");
 
 // Register a User
 
@@ -63,7 +64,7 @@ exports.logout = catchAsyncError(async (req, res, next) => {
 
 // Forgott Password
 exports.forgotPassword = catchAsyncError(async (req, res, next) => {
-  const user = User.findOne({ email: req.body.email });
+  const user = await User.findOne({ email: req.body.email });
 
   if (!user) {
     return next(new ErrorHandler("User not found", 404));
@@ -81,12 +82,22 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   const message = `Your reset password token is :- \n\n ${resetPasswordUrl} \n\n if you have not requested this email then please contact administrator or ignore this email `;
 
   try {
+    await sendEmail({
+      email: user.email,
+      subject: `Ecommerce Password Recovery`,
+      message,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: `Email send to ${user.email} successfully`,
+    });
   } catch (error) {
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
 
     await user.save({ validateBeforeSave: false });
 
-    return next(new ErrorHandler(error.message));
+    return next(new ErrorHandler(error.message, 500));
   }
 });
