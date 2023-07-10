@@ -134,4 +134,8 @@ exports.resetPassword = catchAsyncError(async (req, res, next) => {
 
   user.resetPasswordToken = undefined;
   user.resetPasswordExpire = undefined;
+
+  await user.save();
+
+  sendToken(user, 200, res);
 });
