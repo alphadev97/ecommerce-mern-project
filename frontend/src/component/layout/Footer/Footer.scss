@@ -1,0 +1,68 @@
+@use "../../../App";
+
+.footer {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  color: white;
+  display: flex;
+  align-items: center;
+
+  .leftFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h4 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    img {
+      width: 150px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+
+  .midFooter {
+    width: 60%;
+    text-align: center;
+    gap: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      padding: 1rem 0;
+      color: App.$secondary-color;
+    }
+
+    p {
+      max-width: 60%;
+      margin: 1rem auto;
+    }
+  }
+
+  .rightFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h4 {
+      font-size: 1.5rem;
+      padding: 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: white;
+      padding: 0.5rem 0;
+    }
+  }
+}
