@@ -45,3 +45,11 @@
   font: 500 2rem App.$font-family;
   padding: 2rem 0;
 }
+
+.productCard {
+  width: 14vmax;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+}
