@@ -7,7 +7,7 @@ const product = {
   name: "Blue Shirt",
   images: [
     {
-      url: "https://i5.walmartimages.com/asr/3c92c819-468f-4edd-8098-551a16ea9f1c.a8809b55a1038c8f51139443cd9e92db.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      url: "https://mustafaadmani.pk/cdn/shop/products/mustafaadmanishirts-053.jpg?v=1655375838",
     },
   ],
   price: "Rs.3000",
