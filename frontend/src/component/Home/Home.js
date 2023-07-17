@@ -6,6 +6,7 @@ import MetaData from "../layout/MetaData";
 import { getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
+import { toast } from "react-hot-toast";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,8 +15,12 @@ const Home = () => {
   );
 
   useEffect(() => {
+    if (error) {
+      return toast.error(error);
+    }
+
     dispatch(getProduct());
-  }, [dispatch]);
+  }, [dispatch, error]);
 
   return (
     <Fragment>
