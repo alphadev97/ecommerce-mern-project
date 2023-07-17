@@ -1,0 +1,23 @@
+@use "../../../App.scss";
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+
+  > div {
+    width: 10vmax;
+    height: 10vmax;
+    border-bottom: 5px solid App.$secondary-color;
+    border-radius: 50%;
+    animation: loadingRotate 800ms linear infinite;
+  }
+}
+
+@keyframes loadingRotate {
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
