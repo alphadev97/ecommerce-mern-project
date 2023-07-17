@@ -11,8 +11,8 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route extact path="/" Component={Home} />
-        <Route extact path="/product/:id" Component={ProductDetails} />
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
 
       <Footer />
