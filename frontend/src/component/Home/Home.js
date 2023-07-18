@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/cg";
 import "./Home.scss";
-import Product from "./Product.js";
+import Product from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
-import { getProduct } from "../../actions/productAction";
+import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { toast } from "react-hot-toast";
@@ -16,7 +16,8 @@ const Home = () => {
 
   useEffect(() => {
     if (error) {
-      return toast.error(error);
+      toast.error(error);
+      dispatch(clearErrors());
     }
 
     dispatch(getProduct());
