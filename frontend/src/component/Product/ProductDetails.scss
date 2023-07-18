@@ -1,23 +1,11 @@
+@use "../../App";
+
 .ProductDetails {
   width: 100vw;
   max-width: 100%;
   padding: 6vmax;
-  box-sizing: border-box;
   display: flex;
-}
-
-.carouselContainer {
-  width: 100%;
-  max-width: 800px; /* Set the maximum width for the carousel */
-  height: 400px; /* Set the desired fixed height for the carousel */
-  overflow: hidden; /* Hide any overflowing content */
-  margin-bottom: 20px; /* Optional: Add some margin between carousel and other content */
-}
-
-.carouselImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Adjust how the image fills its container */
+  box-sizing: border-box;
 }
 
 .ProductDetails > div {
@@ -28,9 +16,75 @@
   align-items: center;
   padding: 2vmax;
   box-sizing: border-box;
-  border: 1px solid white;
+  border: 1px solid App.$primary-color;
 }
 
 .ProductDetails > div:last-child {
   align-items: flex-start;
+}
+
+.CrouselImage {
+  width: 20vmax;
+}
+
+.detailsBlock-1 > h2 {
+  color: App.$primary-color;
+  font: 600 1.6vmax App.$font-family;
+}
+
+.detailsBlock-1 > p {
+  color: #2e2e2e;
+  font: 200 0.6vmax App.$font-family;
+}
+
+.detailsBlock-2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid App.$secondary-color;
+  border-bottom: 1px solid App.$secondary-color;
+  width: 70%;
+  padding: 1vmax 0;
+}
+
+.detailsBlock-2 > span {
+  color: #2e2e2e;
+}
+
+.detailsBlock-3 {
+  width: 70%;
+}
+
+.detailsBlock-3 > h1 {
+  color: #2e2e2e;
+  font: 600 1.8vmax App.$font-family;
+  margin: 1vmax 0;
+}
+
+.detailsBlock-3-1 {
+  display: flex;
+  align-items: center;
+}
+
+.detailsBlock-3-1-1 > button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.616);
+  padding: 0.5vmax;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s;
+}
+
+.detailsBlock-3-1-1 > button:hover {
+  background-color: App.$primary-color;
+}
+
+.detailsBlock-3-1-1 > input {
+  border: none;
+  padding: 0.5vmax;
+  width: 1vmax;
+  text-align: center;
+  outline: none;
+  font: 400 0.8vmax App.$font-family;
+  color: black;
 }

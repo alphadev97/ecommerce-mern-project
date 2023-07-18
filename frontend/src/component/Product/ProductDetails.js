@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
-import Carousel from "react-material-ui-carousel";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./ProductDetails.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { getProductDetails } from "../../actions/productAction";
@@ -35,16 +36,16 @@ const ProductDetails = ({ match }) => {
           <Carousel>
             {product.images &&
               product.images.map((item, i) => (
-                <img
-                  className="CrouselImage"
-                  key={item.url}
-                  src={item.url}
-                  alt={`${i} Slide`}
-                />
+                <div key={i}>
+                  <img
+                    className="CrouselImage"
+                    src={item.url}
+                    alt={`${i} Slide`}
+                  />
+                </div>
               ))}
           </Carousel>
         </div>
-
         <div>
           <div className="detailsBlock-1">
             <h2>{product.name}</h2>
