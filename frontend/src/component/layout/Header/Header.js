@@ -31,7 +31,7 @@ const Header2 = () => {
         <a href="/login">
           <BiUserCircle />
         </a>
-        <a href="/">
+        <a href="/search">
           <BiSearch />
         </a>
         <a href="/">
