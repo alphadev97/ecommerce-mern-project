@@ -8,11 +8,24 @@ import { useParams } from "react-router-dom";
 import Pagination from "react-js-pagination";
 import { Slider, Typography } from "@mui/material";
 
+const categories = [
+  "Laptop",
+  "FooLwear",
+  "Bottom",
+  "Tops",
+  "Attire",
+  "Camera",
+  "SmartPhones",
+  "Mobile",
+];
+
 const Product = ({ match }) => {
   const dispatch = useDispatch();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 25000]);
+  const [category, setCategory] = useState("");
+  const [ratings, setRatings] = useState(0);
 
   const {
     products,
@@ -34,8 +47,8 @@ const Product = ({ match }) => {
   };
 
   useEffect(() => {
-    dispatch(getProduct(keyword, currentPage, price));
-  }, [dispatch, keyword, currentPage, price]);
+    dispatch(getProduct(keyword, currentPage, price, category));
+  }, [dispatch, keyword, currentPage, price, category]);
 
   const handleAlertClose = () => {
     dispatch(clearErrors());
@@ -80,31 +93,39 @@ const Product = ({ match }) => {
               min={0}
               max={25000}
             />
-          </div>
-          {/* {resultPerPage < count && (
-            <div className="paginationBox">
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resultPerPage}
-                totalItemsCount={productsCount}
-                onChange={setCurrentPageNo}
-                nextPageText="Next"
-                prevPageText="Prev"
-                firstPageText="1st"
-                lastPageText="Last"
-                itemClass="page-item"
-                linkClass="page-link"
-                activeClass="pageItemActive"
-                activeLinkClass="pageLinkActive"
+
+            <Typography>Categories</Typography>
+            <ul className="categoryBox">
+              {categories.map((category) => (
+                <li
+                  className="category-link"
+                  key={category}
+                  onClick={() => setCategory(category)}
+                >
+                  {category}
+                </li>
+              ))}
+            </ul>
+
+            <fieldset>
+              <Typography component="legend">Ratings Above</Typography>
+              <Slider
+                value={ratings}
+                onChange={(e, newRating) => {
+                  setRatings(newRating);
+                }}
+                aria-labelledby="continous-slider"
+                min={0}
+                max={5}
               />
-            </div>
-          )} */}
+            </fieldset>
+          </div>
 
           <div className="paginationBox">
             <Pagination
               activePage={currentPage}
               itemsCountPerPage={resultPerPage}
-              totalItemsCount={productsCount}
+              totalItemsCount={productsCount || 0}
               onChange={setCurrentPageNo}
               nextPageText="Next"
               prevPageText="Prev"
