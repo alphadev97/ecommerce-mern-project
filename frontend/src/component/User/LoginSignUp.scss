@@ -1,0 +1,14 @@
+@use "../../App";
+
+.LoginSignUpContainer {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: App.$secondary-color;
+  position: fixed;
+  top: 0%;
+  left: 0;
+}

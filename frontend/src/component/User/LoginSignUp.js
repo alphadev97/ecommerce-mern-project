@@ -1,12 +1,21 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import "./LoginSignUp.scss";
 import Loader from "../layout/Loader/Loader";
 import { Link } from "react-router-dom";
+import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 
 const LoginSignUp = () => {
   const loginTab = useRef(null);
   const registerTab = useRef(null);
   const switcherTab = useRef(null);
+
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const loginSubmit = () => {
+    console.log("Form Submitted");
+  };
 
   const switchTabs = (e, tab) => {
     if (tab === "login") {
@@ -39,7 +48,7 @@ const LoginSignUp = () => {
             </div>
             <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
               <div className="loginEmail">
-                <MailOutlineIcon />
+                <MailOutlinedIcon />
                 <input
                   type="email"
                   placeholder="Email"
@@ -49,7 +58,7 @@ const LoginSignUp = () => {
                 />
               </div>
               <div className="loginPassword">
-                <LockOpenIcon />
+                <LockOpenOutlinedIcon />
                 <input
                   type="Password"
                   placeholder="Password"
