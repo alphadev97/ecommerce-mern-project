@@ -7,6 +7,8 @@ import ProductCard from "../Home/ProductCard";
 import { useParams } from "react-router-dom";
 import Pagination from "react-js-pagination";
 import { Slider, Typography } from "@mui/material";
+import { toast } from "react-hot-toast";
+import MetaData from "../layout/MetaData";
 
 const categories = [
   "Laptop",
@@ -47,8 +49,12 @@ const Product = ({ match }) => {
   };
 
   useEffect(() => {
-    dispatch(getProduct(keyword, currentPage, price, category));
-  }, [dispatch, keyword, currentPage, price, category]);
+    if (error) {
+      toast.error(error);
+      dispatch(clearErrors());
+    }
+    dispatch(getProduct(keyword, currentPage, price, category, ratings));
+  }, [dispatch, keyword, currentPage, price, category, ratings, error]);
 
   const handleAlertClose = () => {
     dispatch(clearErrors());
@@ -76,6 +82,7 @@ const Product = ({ match }) => {
         <Loader />
       ) : (
         <Fragment>
+          <MetaData title={`Products - ECommerce | Alpha97`} />
           <h2 className="productsHeading">Products</h2>
           <div className="products">
             {products &&
@@ -117,6 +124,7 @@ const Product = ({ match }) => {
                 aria-labelledby="continous-slider"
                 min={0}
                 max={5}
+                valueLabelDisplay="auto"
               />
             </fieldset>
           </div>

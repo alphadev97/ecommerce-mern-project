@@ -9,6 +9,7 @@ import ReactStars from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
 import { toast } from "react-hot-toast";
+import MetaData from "../layout/MetaData";
 
 const ProductDetails = ({ match }) => {
   const { id } = useParams();
@@ -43,6 +44,7 @@ const ProductDetails = ({ match }) => {
         <Loader />
       ) : (
         <Fragment>
+          <MetaData title={`${product.name} - ECommerce | Alpha97`} />
           <div className="ProductDetails">
             <div className="CarouselContainer">
               <Carousel>
