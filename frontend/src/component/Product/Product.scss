@@ -34,3 +34,41 @@
   transition: all 0.3s;
   cursor: pointer;
 }
+
+.page-item:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.page-item:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.page-link {
+  text-decoration: none;
+  font: 400 1vmax App.$font-family;
+  color: App.$primary-color;
+  transition: all 0.3s;
+}
+
+.page-item:hover {
+  background-color: App.$primary-color;
+}
+
+.page-item:hover .page-link {
+  color: white;
+}
+
+.pageItemActive {
+  background-color: App.$primary-color;
+}
+
+.pageLinkActive {
+  color: white;
+}
+
+.filterBox {
+  width: 10vmax;
+  position: absolute;
+  top: 10vmax;
+  left: 4vmax;
+}
