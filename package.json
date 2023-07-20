@@ -2,7 +2,7 @@
   "name": "ecommerce-mern-project",
   "version": "1.0.0",
   "description": "MERN Stack E-Commerce Project with REST API",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
