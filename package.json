@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "MERN Stack E-Commerce Project with REST API",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "Muhammad Usama | Alpha97",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
   }
 }
