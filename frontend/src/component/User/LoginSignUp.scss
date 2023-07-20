@@ -62,6 +62,10 @@
   transition: all 0.5s;
 }
 
+.signUpForm {
+  transform: translateY(-100%) translateX(-100vmax);
+}
+
 .loginForm > div,
 .signUpForm > div {
   display: flex;
@@ -101,6 +105,34 @@
   color: black;
 }
 
+#registerImage > img {
+  width: 3vmax;
+  border-radius: 100%;
+}
+
+#registerImage > input {
+  display: flex;
+  padding: 0%;
+}
+
+#registerImage > input::file-selector-button {
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  height: 5vh;
+  border: none;
+  margin: 0%;
+  font: 400 0.8vmax App.$font-family;
+  transition: all 0.5s;
+  padding: 0 1vmax;
+  color: rgba(0, 0, 0, 0.623);
+  background-color: rgb(255, 255, 255);
+}
+
+#registerImage > input::file-selector-button:hover {
+  background-color: App.$secondary-color;
+}
+
 .LoginBtn,
 .signUpBtn {
   border: none;
@@ -135,4 +167,56 @@
 
 .shiftToRight {
   transform: translateX(100%);
+}
+
+@media screen and (max-width: 600px) {
+  .LoginSignUpContainer {
+    background-color: white;
+  }
+  .LoginSignUpBox {
+    width: 100vw;
+    height: 95vh;
+  }
+  .login_signUp_toggle {
+    height: 5vmax;
+  }
+  .login_signUp_toggle > p {
+    font: 300 1.5vmax App.$font-family;
+  }
+
+  .loginForm,
+  .signUpForm {
+    padding: 5vmax;
+  }
+
+  .loginForm > div > input,
+  .signUpForm > div > input {
+    padding: 2.5vmax 5vmax;
+    font: 300 1.7vmax App.$font-family;
+  }
+
+  .loginForm > div > svg,
+  .signUpForm > div > svg {
+    font-size: 2.8vmax;
+  }
+
+  .loginForm > a {
+    font: 500 1.8vmax App.$font-family;
+  }
+
+  #registerImage > img {
+    width: 8vmax;
+    border-radius: 100%;
+  }
+
+  #registerImage > input::file-selector-button {
+    height: 7vh;
+    font: 400 1.8vmax App.$font-family;
+  }
+
+  .loginBtn,
+  .signUpBtn {
+    font: 300 1.9vmax App.$font-family;
+    padding: 1.8vmax;
+  }
 }
