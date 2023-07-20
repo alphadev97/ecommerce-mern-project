@@ -12,3 +12,106 @@
   top: 0%;
   left: 0;
 }
+
+.LoginSignUpBox {
+  background-color: white;
+  width: 25vw;
+  height: 70vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.login_signup_toggle {
+  display: flex;
+  height: 3vmax;
+}
+
+.login_signup_toggle > p {
+  color: App.$primary-color;
+  font: 500 1vmax App.$font-family;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.login_signup_toggle > p:hover {
+  color: App.$secondary-color;
+}
+
+.LoginSignUpBox > div > button {
+  background-color: App.$primary-color;
+  height: 3px;
+  width: 50%;
+  border: none;
+  transition: all 0.5s;
+}
+
+.loginForm,
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 2vmax;
+  justify-content: space-evenly;
+  height: 70%;
+  transition: all 0.5s;
+}
+
+.loginForm > div,
+.signUpForm > div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.loginForm > div > input,
+.signUpForm > div > input {
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid App.$primary-color;
+  border-radius: 4px;
+  font: 300 1vmax App.$font-family;
+  outline: none;
+}
+
+.loginForm > div > svg,
+.signUpForm > div > svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: App.$primary-color;
+}
+
+.loginForm > a {
+  color: rgba(0, 0, 0, 0.651);
+  text-decoration: none;
+  align-self: flex-end;
+  transition: all 0.5s;
+  font: 500 1vmax App.$font-family;
+}
+
+.loginForm > a:hover {
+  color: black;
+}
+
+.LoginBtn,
+.signUpBtn {
+  border: none;
+  background-color: App.$primary-color;
+  color: white;
+  width: 100%;
+  font: 300 0.9vmax App.$font-family;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  outline: none;
+}
