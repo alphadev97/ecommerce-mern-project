@@ -1,0 +1,23 @@
+@use "../../../App.scss" as app;
+
+.footer {
+  display: flex;
+  align-items: top;
+  justify-content: space-evenly;
+  background-color: app.$polic-blue;
+  padding: 3rem 0;
+  color: app.$white;
+}
+
+.copyright {
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: app.$polic-blue;
+    font-family: app.$font-assistant;
+    font-weight: 500;
+  }
+}
