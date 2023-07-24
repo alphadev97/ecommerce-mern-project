@@ -7,6 +7,50 @@
   background-color: app.$polic-blue;
   padding: 3rem 0;
   color: app.$white;
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+
+    > a {
+      > img {
+        width: 100%;
+        height: 6rem;
+      }
+    }
+
+    > p {
+      font-family: app.$font-assistant;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .footer-center {
+    > h2 {
+      font-family: app.$font-ubuntu;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    > ul {
+      list-style: none;
+
+      > li {
+        > a {
+          text-decoration: none;
+          color: app.$white;
+          font-family: app.$font-assistant;
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .footer-right {
+    font-family: app.$font-assistant;
+  }
 }
 
 .copyright {

@@ -1,12 +1,14 @@
-import "./App.scss";
-import Layout from "./components/Layout/Layout";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
 
 function App() {
   return (
     <>
-      <Layout>
-        <h1>ECommerce App</h1>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </>
   );
 }

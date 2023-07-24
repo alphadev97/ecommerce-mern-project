@@ -1,13 +1,16 @@
 import React from "react";
 import "./Footer.scss";
+import logo from "../../../assets/logo.png";
 
 const Footer = () => {
   return (
     <div>
       <div className="footer">
         <div className="footer-left">
-          <h1>LOGO</h1>
-          <h2>Social Icons</h2>
+          <a href="/">
+            <img src={logo} alt="" srcset="" />
+          </a>
+          <p>We Provide Best Deals & Products</p>
         </div>
 
         <div className="footer-center">
