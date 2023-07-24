@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+import "./Header.scss";
 
 const Header = () => {
   return (
@@ -15,13 +16,24 @@ const Header = () => {
         <div className="header-center">
           <ul className="navbar">
             <li className="navbar-item">
-              <NavLink to="/">Home</NavLink>
+              <NavLink className="link" to="/">
+                Home
+              </NavLink>
             </li>
             <li className="navbar-item">
-              <NavLink to="/register">Register</NavLink>
+              <NavLink className="link" to="/register">
+                Register
+              </NavLink>
             </li>
             <li className="navbar-item">
-              <NavLink to="/login">Login</NavLink>
+              <NavLink className="link" to="/login">
+                Login
+              </NavLink>
+            </li>
+            <li className="navbar-item">
+              <NavLink className="link" to="/cart">
+                Cart(0)
+              </NavLink>
             </li>
           </ul>
         </div>
