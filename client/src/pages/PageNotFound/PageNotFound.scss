@@ -1,0 +1,29 @@
+@use "../../App.scss" as app;
+
+.pnf {
+  display: flex;
+  min-height: 90vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: app.$font-ubuntu;
+
+  > h1 {
+    font-size: 3rem;
+  }
+
+  > img {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .pnf-btn {
+    margin: 1rem;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background-color: app.$gargo-gas;
+    border-radius: 5px;
+    color: app.$polic-blue;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
