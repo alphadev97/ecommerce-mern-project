@@ -7,6 +7,7 @@
   align-items: center;
   padding: 0 1rem;
   font-family: app.$font-assistant;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .header-left {
     > a {
@@ -20,7 +21,6 @@
   .header-center {
     .navbar {
       display: flex;
-      gap: 2rem;
 
       .navbar-item {
         list-style: none;
@@ -31,9 +31,16 @@
           font-weight: 600;
           font-size: 1rem;
           transition: all 0.5s ease;
+          text-transform: uppercase;
+          font-family: app.$font-ubuntu;
+          padding: 1rem 1.5rem;
 
           &:hover {
-            color: app.$gargo-gas;
+            background-color: app.$gargo-gas;
+            color: app.$polic-blue;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+              rgba(0, 0, 0, 0.22) 0px 10px 10px;
           }
         }
       }
