@@ -5,7 +5,7 @@ import "./Policy.scss";
 
 const Policy = () => {
   return (
-    <Layout>
+    <Layout title={"Policy - Alpha97 | E-Commerce"}>
       <h1 className="ph1">Policy</h1>
       <div className="policy">
         <div className="policy-left">

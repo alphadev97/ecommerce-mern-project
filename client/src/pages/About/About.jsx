@@ -5,7 +5,7 @@ import "./About.scss";
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title={"About Us - Alpha97 | E-Commerce"}>
       <h1 className="ah1">About Us</h1>
       <div className="about">
         <div className="about-left">

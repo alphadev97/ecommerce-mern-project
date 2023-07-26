@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout title={"Contact Us - Alpha97 | E-Commerce"}>
       <h1 className="ch1">Contact Us</h1>
       <div className="contact">
         <div className="contact-left">
