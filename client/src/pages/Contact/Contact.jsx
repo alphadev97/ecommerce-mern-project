@@ -8,9 +8,8 @@ import { MdEmail } from "react-icons/md";
 const Contact = () => {
   return (
     <Layout>
+      <h1 className="ch1">Contact Us</h1>
       <div className="contact">
-        <h1>Contact Us</h1>
-
         <div className="contact-left">
           <img src={contactImg} alt="" />
         </div>
