@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.scss";
 import logo from "../../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,16 +18,16 @@ const Footer = () => {
           <h2>Important Links</h2>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="#">Product</a>
+              <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <a href="#">Shop</a>
+              <Link to="/policy">Policy</Link>
             </li>
           </ul>
         </div>
