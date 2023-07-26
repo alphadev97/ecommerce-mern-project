@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import contactImg from "../../assets/contact.jpg";
+import policyImg from "../../assets/policy.jpg";
 import "./Policy.scss";
 
 const Policy = () => {
@@ -9,7 +9,7 @@ const Policy = () => {
       <h1 className="ph1">Policy</h1>
       <div className="policy">
         <div className="policy-left">
-          <img src={contactImg} alt="" />
+          <img src={policyImg} alt="" />
         </div>
 
         <div className="policy-right">

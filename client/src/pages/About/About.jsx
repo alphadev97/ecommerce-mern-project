@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import contactImg from "../../assets/contact.jpg";
+import aboutImg from "../../assets/about.jpg";
 import "./About.scss";
 
 const About = () => {
@@ -9,7 +9,7 @@ const About = () => {
       <h1 className="ah1">About Us</h1>
       <div className="about">
         <div className="about-left">
-          <img src={contactImg} alt="" />
+          <img src={aboutImg} alt="" />
         </div>
 
         <div className="about-right">
