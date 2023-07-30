@@ -4,15 +4,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 90vh;
   flex-direction: column;
-
-  > h1 {
-    font-family: app.$font-ubuntu;
-    margin-bottom: 1rem;
-  }
+  background-image: linear-gradient(
+    to right top,
+    #3c486b,
+    #8b5a8b,
+    #db6a84,
+    #ff9661,
+    #f9d949
+  );
 
   form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    > h1 {
+      font-family: app.$font-ubuntu;
+      margin-bottom: 1rem;
+    }
     .container {
       display: flex;
       flex-direction: column;

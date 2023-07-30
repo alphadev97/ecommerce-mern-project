@@ -44,8 +44,8 @@ const Register = () => {
   return (
     <Layout title={"Register - Alpha97 Ecommerce"}>
       <div className="register">
-        <h1>Register Page</h1>
         <form onSubmit={handleSubmit}>
+          <h1>Register Page</h1>
           <div className="container">
             <input
               type="text"
