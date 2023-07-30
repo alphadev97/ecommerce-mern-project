@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Register.scss";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -9,13 +11,34 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const navigate = useNavigate();
 
   // Form Function
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, email, password, phone, address);
-    toast.success("Register Successfully");
+    try {
+      const res = await axios.post(
+        "http://localhost:8080/api/v1/auth/register",
+        {
+          name,
+          email,
+          password,
+          phone,
+          address,
+        }
+      );
+
+      if (res.data.success) {
+        toast.success(res.data.message);
+        navigate("/login");
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong");
+    }
   };
 
   return (
