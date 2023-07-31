@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import "./Register.scss";
+import "./Login.scss";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-const Register = () => {
-  const [name, setName] = useState("");
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
+
   const navigate = useNavigate();
 
   // Form Function
@@ -18,20 +16,14 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8080/api/v1/auth/register",
-        {
-          name,
-          email,
-          password,
-          phone,
-          address,
-        }
-      );
+      const res = await axios.post("http://localhost:8080/api/v1/auth/login", {
+        email,
+        password,
+      });
 
       if (res.data.success) {
         toast.success(res.data.message);
-        navigate("/login");
+        navigate("/");
       } else {
         toast.error(res.data.message);
       }
@@ -42,19 +34,11 @@ const Register = () => {
   };
 
   return (
-    <Layout title={"Register - Alpha97 Ecommerce"}>
-      <div className="register">
+    <Layout title={"Login - Alpha97 Ecommerce"}>
+      <div className="login">
         <form onSubmit={handleSubmit}>
-          <h1>Register Page</h1>
+          <h1>Login Page</h1>
           <div className="container">
-            <input
-              type="text"
-              placeholder="Enter Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-
             <input
               type="email"
               placeholder="Enter Your Email Address"
@@ -71,23 +55,7 @@ const Register = () => {
               required
             />
 
-            <input
-              type="text"
-              placeholder="Enter Your Phone No."
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-            />
-
-            <input
-              type="text"
-              placeholder="Enter Your Address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-            />
-
-            <button type="submit">Resgiter</button>
+            <button type="submit">Login</button>
           </div>
         </form>
       </div>
@@ -95,4 +63,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

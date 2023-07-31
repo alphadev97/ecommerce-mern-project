@@ -1,0 +1,61 @@
+@use "../../App.scss" as app;
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to right top,
+    #3c486b,
+    #8b5a8b,
+    #db6a84,
+    #ff9661,
+    #f9d949
+  );
+
+  form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    > h1 {
+      font-family: app.$font-ubuntu;
+      margin-bottom: 1rem;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-family: app.$font-assistant;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.308);
+        border-radius: 0.2rem;
+      }
+
+      button {
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-family: app.$font-assistant;
+        outline: none;
+        cursor: pointer;
+        background-color: app.$polic-blue;
+        color: white;
+        border-radius: 0.2rem;
+        transition: all 0.5s ease;
+
+        &:hover {
+          background-color: app.$gargo-gas;
+          border: 1px solid app.$polic-blue;
+          color: app.$polic-blue;
+        }
+      }
+    }
+  }
+}
