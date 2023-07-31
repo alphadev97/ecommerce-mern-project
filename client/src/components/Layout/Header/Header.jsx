@@ -2,8 +2,20 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import "./Header.scss";
+import { useAuth } from "../../../context/auth";
 
 const Header = () => {
+  const [auth, setAuth] = useAuth();
+
+  const handleLogOut = () => {
+    setAuth({
+      ...auth,
+      user: null,
+      token: "",
+    });
+    localStorage.removeItem("auth");
+  };
+
   return (
     <>
       <div className="header">
@@ -25,16 +37,28 @@ const Header = () => {
                 Category
               </NavLink>
             </li>
-            <li className="navbar-item">
-              <NavLink className="link" to="/register">
-                Register
-              </NavLink>
-            </li>
-            <li className="navbar-item">
-              <NavLink className="link" to="/login">
-                Login
-              </NavLink>
-            </li>
+            {!auth.user ? (
+              <>
+                <li className="navbar-item">
+                  <NavLink className="link" to="/register">
+                    Register
+                  </NavLink>
+                </li>
+                <li className="navbar-item">
+                  <NavLink className="link" to="/login">
+                    Login
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="navbar-item">
+                  <NavLink onClick={handleLogOut} className="link" to="/login">
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            )}
             <li className="navbar-item">
               <NavLink className="link" to="/cart">
                 Cart(0)
