@@ -6,12 +6,14 @@ import Policy from "./pages/Policy/Policy";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
