@@ -18,6 +18,7 @@ const Spinner = () => {
     <>
       <div className="body">
         <div className="loader">Loading...</div>
+        <h1 className="Text-center">redirecting to you in {count} second!</h1>
       </div>
     </>
   );

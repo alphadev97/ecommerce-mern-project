@@ -2,15 +2,20 @@
 
 .body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   background-color: app.$polic-blue;
+
+  h1 {
+    color: app.$gargo-gas;
+  }
 }
 
 .loader {
-  color: rgb(234, 255, 0);
+  color: app.$gargo-gas;
   font-size: 90px;
   text-indent: -9999em;
   overflow: hidden;
