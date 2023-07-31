@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import "./Header.scss";
 import { useAuth } from "../../../context/auth";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -14,6 +15,7 @@ const Header = () => {
       token: "",
     });
     localStorage.removeItem("auth");
+    toast.success("Logout Successfully");
   };
 
   return (
