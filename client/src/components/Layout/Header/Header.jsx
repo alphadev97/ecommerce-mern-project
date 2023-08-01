@@ -54,11 +54,23 @@ const Header = () => {
               </>
             ) : (
               <>
-                <li className="navbar-item">
-                  <NavLink onClick={handleLogOut} className="link" to="/login">
-                    Logout
+                <ul className="dropdown">
+                  <NavLink className={"link"} to="#">
+                    {auth?.user?.name}
                   </NavLink>
-                </li>
+                  <li className="dropdown-content">
+                    <NavLink className={"d-link"} to={"/dashboard"}>
+                      Dashboard
+                    </NavLink>
+                    <NavLink
+                      className={"d-link"}
+                      to={"/login"}
+                      onClick={handleLogOut}
+                    >
+                      Logout
+                    </NavLink>
+                  </li>
+                </ul>
               </>
             )}
             <li className="navbar-item">

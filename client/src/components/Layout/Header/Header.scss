@@ -47,3 +47,40 @@
     }
   }
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  .link {
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    color: app.$white;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    font-family: app.$font-ubuntu;
+    padding: 1rem 1.5rem;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+
+  .d-link {
+    text-decoration: none;
+    font-family: app.$font-ubuntu;
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+  gap: 1rem;
+}
