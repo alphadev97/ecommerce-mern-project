@@ -25,7 +25,7 @@ const Login = () => {
       });
 
       if (res.data.success) {
-        toast.success(res.data.message);
+        toast.success(res.data && res.data.message);
         setAuth({
           ...auth,
           user: res.data.user,
@@ -63,6 +63,15 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/forgot-password");
+              }}
+            >
+              Forgot Password?
+            </button>
 
             <button type="submit">Login</button>
           </div>

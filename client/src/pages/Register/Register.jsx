@@ -11,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
   // Form Function
@@ -26,6 +27,7 @@ const Register = () => {
           password,
           phone,
           address,
+          answer,
         }
       );
 
@@ -84,6 +86,14 @@ const Register = () => {
               placeholder="Enter Your Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="What city were you born in?"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
               required
             />
 
