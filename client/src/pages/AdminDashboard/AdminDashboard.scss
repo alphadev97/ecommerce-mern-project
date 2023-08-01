@@ -1,0 +1,9 @@
+@use "../../App.scss" as app;
+
+.container {
+  margin: 1rem;
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
