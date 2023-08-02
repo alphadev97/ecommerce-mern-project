@@ -1,11 +1,11 @@
 import React from "react";
-import "./CreateCategory.scss";
+import "./Users.scss";
 import Layout from "../../components/Layout/Layout";
 import AdminMenu from "../../components/Layout/AdminMenu/AdminMenu";
 
-const CreateCategory = () => {
+const Users = () => {
   return (
-    <Layout title={"Create Category - Alpha97 ECommerce"}>
+    <Layout title={"All Users - Alpha97 ECommerce"}>
       <div className="container">
         <div className="row">
           <div className="row-left">
@@ -13,7 +13,7 @@ const CreateCategory = () => {
           </div>
           <div className="row-right">
             <div className="card">
-              <h1>Create Category</h1>
+              <h1>Users</h1>
             </div>
           </div>
         </div>
@@ -22,4 +22,4 @@ const CreateCategory = () => {
   );
 };
 
-export default CreateCategory;
+export default Users;
