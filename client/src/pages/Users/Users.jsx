@@ -5,7 +5,7 @@ import AdminMenu from "../../components/Layout/AdminMenu/AdminMenu";
 
 const Users = () => {
   return (
-    <Layout title={"All Users - Alpha97 ECommerce"}>
+    <Layout title={"Dashboard - All Users - Alpha97 ECommerce"}>
       <div className="container">
         <div className="row">
           <div className="row-left">

@@ -5,7 +5,7 @@ import AdminMenu from "../../components/Layout/AdminMenu/AdminMenu";
 
 const CreateCategory = () => {
   return (
-    <Layout title={"Create Category - Alpha97 ECommerce"}>
+    <Layout title={"Dashboard - Create Category - Alpha97 ECommerce"}>
       <div className="container">
         <div className="row">
           <div className="row-left">
