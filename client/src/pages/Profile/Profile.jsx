@@ -1,14 +1,11 @@
 import React from "react";
-import "./Dashboard.scss";
+import "./Profile.scss";
 import Layout from "../../components/Layout/Layout";
 import UserMenu from "../../components/Layout/UserMenu/UserMenu";
-import { useAuth } from "../../context/auth";
 
-const Dashboard = () => {
-  const [auth] = useAuth();
-
+const Profile = () => {
   return (
-    <Layout title={"Dashboard - Alpha97 Ecommerce "}>
+    <Layout title={"Profile - Alpha97 Ecommerce"}>
       <div className="container">
         <div className="row">
           <div className="row-left">
@@ -16,9 +13,7 @@ const Dashboard = () => {
           </div>
           <div className="row-right">
             <div className="card">
-              <h3>{auth?.user?.name}</h3>
-              <h3>{auth?.user?.email}</h3>
-              <h3>{auth?.user?.address}</h3>
+              <h1>Profile</h1>
             </div>
           </div>
         </div>
@@ -27,4 +22,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Profile;

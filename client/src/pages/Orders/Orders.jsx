@@ -1,14 +1,11 @@
 import React from "react";
-import "./Dashboard.scss";
+import "./Orders.scss";
 import Layout from "../../components/Layout/Layout";
 import UserMenu from "../../components/Layout/UserMenu/UserMenu";
-import { useAuth } from "../../context/auth";
 
-const Dashboard = () => {
-  const [auth] = useAuth();
-
+const Orders = () => {
   return (
-    <Layout title={"Dashboard - Alpha97 Ecommerce "}>
+    <Layout title={"Your Orders - Alpha97 Ecommerce"}>
       <div className="container">
         <div className="row">
           <div className="row-left">
@@ -16,9 +13,7 @@ const Dashboard = () => {
           </div>
           <div className="row-right">
             <div className="card">
-              <h3>{auth?.user?.name}</h3>
-              <h3>{auth?.user?.email}</h3>
-              <h3>{auth?.user?.address}</h3>
+              <h1>Your Orders</h1>
             </div>
           </div>
         </div>
@@ -27,4 +22,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Orders;
