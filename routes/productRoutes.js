@@ -4,6 +4,7 @@ import {
   createProductController,
   getProductController,
   getSingleProductController,
+  productPhotoController,
 } from "../controllers/productController.js";
 import formidable from "express-formidable";
 
@@ -23,5 +24,8 @@ router.get("/get-product", getProductController);
 
 // Get single products
 router.get("/get-product/:slug", getSingleProductController);
+
+// get photo
+router.get("/product-photo/:pid", productPhotoController);
 
 export default router;
