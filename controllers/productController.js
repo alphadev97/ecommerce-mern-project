@@ -52,6 +52,7 @@ export const getProductController = async (req, res) => {
   try {
     const products = await productModel
       .find({})
+      .populate("category")
       .select("-photo")
       .limit(20)
       .sort({ createdAt: -1 });
@@ -72,4 +73,23 @@ export const getProductController = async (req, res) => {
 };
 
 // get single product
-export const getSingleProductController = () => {};
+export const getSingleProductController = async (req, res) => {
+  try {
+    const product = await productModel
+      .findOne({ slug: req.params.slug })
+      .select("-photo")
+      .populate("category");
+    res.status(200).send({
+      success: true,
+      message: "Single product fetched",
+      product,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in getting single product",
+      error,
+    });
+  }
+};
