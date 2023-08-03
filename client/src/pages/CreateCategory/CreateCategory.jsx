@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CreateCategory.scss";
 import Layout from "../../components/Layout/Layout";
 import AdminMenu from "../../components/Layout/AdminMenu/AdminMenu";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const CreateCategory = () => {
+  const [categories, setCategories] = useState([]);
+
+  // get all categories
+  const getAllCategory = async () => {
+    try {
+      const { data } = await axios.get(
+        "http://localhost:8080/api/v1/category/get-category"
+      );
+      if (data.success) {
+        setCategories(data.category);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong in getting category");
+    }
+  };
+
+  useEffect(() => {
+    getAllCategory();
+  }, []);
+
   return (
     <Layout title={"Dashboard - Create Category - Alpha97 ECommerce"}>
       <div className="container">
@@ -13,7 +36,31 @@ const CreateCategory = () => {
           </div>
           <div className="row-right">
             <div className="card">
-              <h1>Create Category</h1>
+              <h1>Manage Category</h1>
+              <div className="table">
+                <div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {categories.map((c) => (
+                        <>
+                          <tr>
+                            <td key={c._id}>{c.name}</td>
+                            <td>
+                              <button className="btn">Edit</button>
+                            </td>
+                          </tr>
+                        </>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
