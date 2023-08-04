@@ -12,7 +12,7 @@
       .card {
         > h1 {
           font-family: app.$font-ubuntu;
-          padding-bottom: 1rem;
+          padding: 1rem;
           text-align: center;
         }
       }
@@ -35,7 +35,8 @@
     border-spacing: 1;
     border-collapse: collapse;
     background: white;
-
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     max-width: 800px;
     width: 100%;
@@ -69,6 +70,10 @@
       font-size: 1.5rem;
       border: 1px solid black;
     }
+  }
+
+  .form {
+    margin: 1rem;
   }
 
   .btn {
