@@ -77,6 +77,16 @@
     background-color: app.$gargo-gas;
     border: 1px solid black;
     cursor: pointer;
+    margin-right: 1rem;
+  }
+
+  .btn-danger {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: red;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
   }
 
   @media #{$gl-xs} {

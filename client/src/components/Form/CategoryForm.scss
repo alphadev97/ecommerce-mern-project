@@ -1,0 +1,31 @@
+@use "../../App.scss" as app;
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    width: 40%;
+    height: 2rem;
+    padding: 1rem;
+    margin: 1rem 0 1rem 1rem;
+    border: 3px solid app.$polic-blue;
+    border-radius: 1rem;
+    font-family: app.$font-assistant;
+    font-size: 1rem;
+  }
+
+  button {
+    height: 2rem;
+    width: 10%;
+    margin-left: 0.5rem;
+    border-radius: 1rem;
+    font-family: app.$font-assistant;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: app.$gargo-gas;
+    cursor: pointer;
+    border: 3px solid app.$polic-blue;
+  }
+}
