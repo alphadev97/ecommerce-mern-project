@@ -76,6 +76,25 @@ const CreateCategory = () => {
     }
   };
 
+  // delete category
+
+  const handleDelete = async (pId) => {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:8080/api/v1/category/delete-category/${pId}`,
+        { name: updatedName }
+      );
+      if (data.success) {
+        toast.success(`Category is Deleted!`);
+        getAllCategory();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error("Something went wrong");
+    }
+  };
+
   return (
     <Layout title={"Dashboard - Create Category - Alpha97 ECommerce"}>
       <div className="container">
@@ -119,7 +138,14 @@ const CreateCategory = () => {
                               >
                                 Edit
                               </button>
-                              <button className="btn-danger">Delete</button>
+                              <button
+                                className="btn-danger"
+                                onClick={() => {
+                                  handleDelete(c._id);
+                                }}
+                              >
+                                Delete
+                              </button>
                             </td>
                           </tr>
                         </>
