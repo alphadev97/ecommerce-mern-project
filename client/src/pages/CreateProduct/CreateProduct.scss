@@ -6,4 +6,20 @@
     display: flex;
     flex-direction: row;
   }
+
+  .row-product {
+    font-family: app.$font-assistant;
+    width: 100%;
+
+    .card-product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .select {
+        width: 100%;
+        border: 1px solid rgb(124, 124, 124);
+      }
+    }
+  }
 }
