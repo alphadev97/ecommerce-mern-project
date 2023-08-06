@@ -10,7 +10,7 @@ const { Option } = Select;
 
 const CreateProduct = () => {
   const [categories, setCategories] = useState([]);
-  // const [photo, setPhoto] = useState("");
+  const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -34,6 +34,10 @@ const CreateProduct = () => {
     }
   };
 
+  // create product function
+
+  const handleCreate = () => {};
+
   useEffect(() => {
     getAllCategory();
   }, []);
@@ -48,7 +52,7 @@ const CreateProduct = () => {
           <div className="row-product">
             <div className="card-product">
               <h1>Create Product</h1>
-              <div>
+              <div className="category">
                 <Select
                   className="select"
                   bordered={false}
@@ -65,6 +69,82 @@ const CreateProduct = () => {
                     </Option>
                   ))}
                 </Select>
+
+                <div className="photo">
+                  <label>
+                    {photo ? photo.name : "Upload Photo"}
+                    <input
+                      type="file"
+                      name="photo"
+                      accept="image/*"
+                      onChange={(e) => setPhoto(e.target.files[0])}
+                      hidden
+                    />
+                  </label>
+                </div>
+                <div>
+                  {photo && (
+                    <div>
+                      <img
+                        src={URL.createObjectURL(photo)}
+                        alt="product photo"
+                        height={"200px"}
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="product-input">
+                  <input
+                    type="text"
+                    value={name}
+                    placeholder="Write a name"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="product-input">
+                  <textarea
+                    type="text"
+                    value={description}
+                    placeholder="Write a description"
+                    rows="4"
+                    cols="50"
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
+                </div>
+                <div className="product-input">
+                  <input
+                    type="number"
+                    value={price}
+                    placeholder="Write Price"
+                    onChange={(e) => setPrice(e.target.value)}
+                  />
+                </div>
+                <div className="product-input">
+                  <input
+                    type="number"
+                    value={quantity}
+                    placeholder="Write Quantity"
+                    onChange={(e) => setQuantity(e.target.value)}
+                  />
+                </div>
+                <div className="product-input">
+                  <Select
+                    bordered={false}
+                    placeholder={"Select Shipping"}
+                    size="large"
+                    showSearch
+                    className="select"
+                    onChange={(value) => {
+                      setShipping(value);
+                    }}
+                  >
+                    <Option value="0">No</Option>
+                    <Option value="1">Yes</Option>
+                  </Select>
+                </div>
+                <div className="product-input">
+                  <button onClick={handleCreate}>Create Product</button>
+                </div>
               </div>
             </div>
           </div>
