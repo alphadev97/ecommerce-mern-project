@@ -99,6 +99,14 @@ const Home = () => {
               ))}
             </Radio.Group>
           </div>
+          <div className="cat-filter">
+            <button
+              className="reset-btn"
+              onClick={() => window.location.reload()}
+            >
+              Reset Filters
+            </button>
+          </div>
         </div>
         <div className="right">
           <h1>All Products</h1>
