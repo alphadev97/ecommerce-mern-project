@@ -1,0 +1,20 @@
+@use "../../App.scss" as app;
+
+.home {
+  display: flex;
+  padding: 1rem;
+
+  .left {
+    width: 30%;
+  }
+
+  .right {
+    width: 70%;
+
+    > h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
