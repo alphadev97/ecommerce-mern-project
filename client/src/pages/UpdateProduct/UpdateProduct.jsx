@@ -93,6 +93,26 @@ const UpdateProduct = () => {
     getAllCategory();
   }, []);
 
+  // Delete product
+
+  const handleDelete = async () => {
+    try {
+      let answer = window.prompt(
+        "Are you sure you want to delete this product?"
+      );
+
+      if (!answer) return;
+      const { data } = axios.delete(
+        `http://localhost:8080/api/v1/product/delete-product/${id}`
+      );
+      toast.success("Product Deleted Successfully");
+      navigate("/dashboard/admin/products");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
+  };
+
   return (
     <Layout title={"Dashboard - Create Product - Alpha97 ECommerce"}>
       <div className="container">
@@ -205,6 +225,11 @@ const UpdateProduct = () => {
                 </div>
                 <div className="product-input">
                   <button onClick={handleUpdate}>Update Product</button>
+                </div>
+                <div className="product-input">
+                  <button className="delete" onClick={handleDelete}>
+                    Delete Product
+                  </button>
                 </div>
               </div>
             </div>
