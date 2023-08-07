@@ -54,8 +54,25 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getAllProducts();
-  }, []);
+    if (!checked.length || !radio.length) getAllProducts();
+  }, [checked.length, radio.length]);
+
+  useEffect(() => {
+    if (checked.length || radio.length) filterProduct();
+  }, [checked, radio]);
+
+  // get filtered prducts
+  const filterProduct = async () => {
+    try {
+      const { data } = await axios.post(
+        "http://localhost:8080/api/v1/product/product-filter",
+        { checked, radio }
+      );
+      setProducts(data?.products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Layout title={"All Products - Best Offers - Alpha97 E-Commerce"}>
       <div className="home">
@@ -84,7 +101,6 @@ const Home = () => {
           </div>
         </div>
         <div className="right">
-          {JSON.stringify(radio, null, 4)}
           <h1>All Products</h1>
           <div className="card-container">
             {products?.map((p) => (
@@ -95,7 +111,8 @@ const Home = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">{p.description}</p>
+                  <p className="card-text">{p.description.substring(0, 30)}</p>
+                  <p className="card-text">${p.price}</p>
                 </div>
                 <div className="btn">
                   <button>More Details</button>
