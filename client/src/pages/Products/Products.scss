@@ -7,3 +7,24 @@
     flex-direction: row;
   }
 }
+
+.product-link {
+  text-decoration: none;
+  color: black;
+}
+
+.card-container {
+  display: flex;
+  gap: 1rem;
+
+  .card {
+    margin: 1rem 0.5rem;
+    border: 1px solid app.$polic-blue;
+    padding: 0.5rem;
+
+    img {
+      height: 10rem;
+      width: 10rem;
+    }
+  }
+}
