@@ -14,17 +14,36 @@
 }
 
 .card-container {
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Display 3 products per row
+  gap: 1rem; // Gap between products
+  padding: 1rem; // Add some padding to the container if desired
 
   .card {
-    margin: 1rem 0.5rem;
-    border: 1px solid app.$polic-blue;
-    padding: 0.5rem;
+    background-color: app.$white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
 
     img {
-      height: 10rem;
-      width: 10rem;
+      width: 100%;
+      height: 200px; // Set the desired image height
+      object-fit: contain;
+    }
+
+    .card-body {
+      padding: 1rem;
+      text-align: center;
+
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .card-text {
+        font-size: 1rem;
+        color: app.$polic-blue;
+      }
     }
   }
 }
