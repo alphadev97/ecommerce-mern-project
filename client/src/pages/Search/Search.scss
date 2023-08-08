@@ -1,0 +1,8 @@
+@use "../../App.scss" as app;
+
+.container {
+  .text-center {
+    display: flex;
+    flex-direction: column;
+  }
+}

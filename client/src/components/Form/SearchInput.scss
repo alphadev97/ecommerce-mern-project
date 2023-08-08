@@ -1,0 +1,40 @@
+@use "../../App.scss" as app;
+
+.search-form {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 2rem;
+
+  input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    width: 300px;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  button {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    background-color: app.$gargo-gas;
+    color: app.$polic-blue;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 16px;
+    width: 20%;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

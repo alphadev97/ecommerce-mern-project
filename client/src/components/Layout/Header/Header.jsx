@@ -4,6 +4,7 @@ import logo from "../../../assets/logo.png";
 import "./Header.scss";
 import { useAuth } from "../../../context/auth";
 import toast from "react-hot-toast";
+import SearchInput from "../../Form/SearchInput";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -29,6 +30,7 @@ const Header = () => {
 
         <div className="header-center">
           <ul className="navbar">
+            <SearchInput />
             <li className="navbar-item">
               <NavLink className="link" to="/">
                 Home

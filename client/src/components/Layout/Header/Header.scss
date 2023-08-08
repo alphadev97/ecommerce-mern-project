@@ -19,8 +19,10 @@
   }
 
   .header-center {
+    width: 70%;
     .navbar {
       display: flex;
+      align-items: center;
 
       .navbar-item {
         list-style: none;
