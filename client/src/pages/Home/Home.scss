@@ -93,3 +93,28 @@
     }
   }
 }
+
+.reset-btn {
+  padding: 0.5rem 0;
+  font-family: app.$font-assistant;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+.pag {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+
+  .pag-btn {
+    font-family: app.$font-assistant;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background-color: app.$gargo-gas;
+    border: 1px solid app.$polic-blue;
+    cursor: pointer;
+  }
+}

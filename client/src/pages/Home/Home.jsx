@@ -10,6 +10,9 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   // get all categories
   const getAllCategory = async () => {
@@ -39,15 +42,31 @@ const Home = () => {
 
   useEffect(() => {
     getAllCategory();
+    getTotal();
   }, []);
 
   // Get all products
   const getAllProducts = async () => {
     try {
+      setLoading(true);
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/product/get-product"
+        `http://localhost:8080/api/v1/product/product-get/${page}`
       );
+      setLoading(false);
       setProducts(data.products);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
+
+  // get total count
+  const getTotal = async () => {
+    try {
+      const { data } = await axios.get(
+        "http://localhost:8080/api/v1/product/product-count"
+      );
+      setTotal(data?.total);
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +79,26 @@ const Home = () => {
   useEffect(() => {
     if (checked.length || radio.length) filterProduct();
   }, [checked, radio]);
+
+  useEffect(() => {
+    if (page === 1) return;
+    loadMore();
+  }, [page]);
+
+  // load more
+  const loadMore = async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.get(
+        `http://localhost:8080/api/v1/product/product-get/${page}`
+      );
+      setLoading(false);
+      setProducts([...products, ...data?.products]);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
 
   // get filtered prducts
   const filterProduct = async () => {
@@ -128,6 +167,19 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="pag">
+            {products && products.length < total && (
+              <button
+                className="pag-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPage(page + 1);
+                }}
+              >
+                {loading ? "Loading...." : "Load More"}
+              </button>
+            )}
           </div>
         </div>
       </div>
