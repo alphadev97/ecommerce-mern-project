@@ -4,8 +4,10 @@ import "./Home.scss";
 import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../../components/Prices/Prices.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -162,7 +164,9 @@ const Home = () => {
                   <p className="card-text">${p.price}</p>
                 </div>
                 <div className="btn">
-                  <button>More Details</button>
+                  <button onClick={() => navigate(`/product/${p.slug}`)}>
+                    More Details
+                  </button>
                   <button>Add To Cart</button>
                 </div>
               </div>

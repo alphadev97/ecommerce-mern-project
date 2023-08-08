@@ -1,0 +1,19 @@
+@use "../../App.scss" as app;
+
+.product-container {
+  display: flex;
+  padding: 1rem;
+
+  .pr-left {
+    width: 50%;
+  }
+
+  .pr-right {
+    width: 50%;
+  }
+}
+
+.sim-prod {
+  display: flex;
+  padding: 1rem;
+}
