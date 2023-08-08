@@ -59,7 +59,10 @@ const ProductDetails = () => {
       </div>
       <hr />
       <div className="sim-prod">
-        <h2>Simliar Product</h2>
+        <h4>Simliar Product</h4>
+
+        {relatedProducts.length < 1 && <p>No Simliar Product Found</p>}
+
         <div className="card-container">
           {relatedProducts?.map((p) => (
             <div className="card" key={p._id}>
