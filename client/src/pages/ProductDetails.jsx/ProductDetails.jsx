@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 const ProductDetails = () => {
   const params = useParams();
   const [product, setProduct] = useState({});
+  const [relatedProducts, setRelatedProducts] = useState([]);
 
   //   initial product details
   useEffect(() => {
@@ -20,10 +21,24 @@ const ProductDetails = () => {
         `http://localhost:8080/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
+      getSimiliarProduct(data?.product._id, data?.product.category._id);
     } catch (error) {
       console.log(error);
     }
   };
+
+  // get similiar product
+  const getSimiliarProduct = async (pid, cid) => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:8080/api/v1/product/related-product/${pid}/${cid}`
+      );
+      setRelatedProducts(data?.products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Layout>
       <div className="product-container">
@@ -42,7 +57,28 @@ const ProductDetails = () => {
           <button>Add To Cart</button>
         </div>
       </div>
-      <div className="sim-prod">Similiar Product</div>
+      <hr />
+      <div className="sim-prod">
+        <h2>Simliar Product</h2>
+        <div className="card-container">
+          {relatedProducts?.map((p) => (
+            <div className="card" key={p._id}>
+              <img
+                src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                alt={p.name}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{p.name}</h5>
+                <p className="card-text">{p.description.substring(0, 30)}</p>
+                <p className="card-text">${p.price}</p>
+              </div>
+              <div className="btn">
+                <button>Add To Cart</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 };
