@@ -5,11 +5,42 @@
   padding: 1rem;
 
   .pr-left {
+    display: flex;
     width: 50%;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 400px;
+      height: 400px;
+    }
   }
 
   .pr-right {
+    display: flex;
+    flex-direction: column;
     width: 50%;
+    gap: 1rem;
+
+    h1 {
+      font-family: app.$font-ubuntu;
+    }
+
+    h6 {
+      font-family: app.$font-assistant;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 150px;
+      padding: 0.5rem 2rem;
+      cursor: pointer;
+      border: none;
+      background-color: app.$polic-blue;
+      color: white;
+      border-radius: 0.2rem;
+      font-size: 1rem;
+    }
   }
 }
 

@@ -35,7 +35,11 @@ const ProductDetails = () => {
         </div>
         <div className="pr-right">
           <h1>Product Details</h1>
-          <h4>Name: {product.name}</h4>
+          <h6>Name: {product.name}</h6>
+          <h6>Description: {product.description}</h6>
+          <h6>Price: {product.price}</h6>
+          <h6>Category: {product.category?.name}</h6>
+          <button>Add To Cart</button>
         </div>
       </div>
       <div className="sim-prod">Similiar Product</div>
