@@ -1,0 +1,27 @@
+@use "../../App.scss" as app;
+
+.container {
+  display: flex;
+  font-family: app.$font-assistant;
+  justify-content: center;
+  margin: 2rem 0;
+
+  .category {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+
+    .cat-btn {
+      .cat-link {
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: app.$gargo-gas;
+        border-radius: 0.2rem;
+        text-decoration: none;
+        font-size: 1rem;
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
+}
