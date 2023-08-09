@@ -1,0 +1,18 @@
+@use "../../App.scss" as app;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > h4 {
+    font-family: app.$font-ubuntu;
+    font-size: 1rem;
+  }
+
+  > h6 {
+    font-family: app.$font-assistant;
+    font-size: 1rem;
+  }
+}
