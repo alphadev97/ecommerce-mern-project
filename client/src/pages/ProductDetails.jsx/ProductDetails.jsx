@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./ProductDetails.scss";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
 
@@ -76,6 +77,9 @@ const ProductDetails = () => {
                 <p className="card-text">${p.price}</p>
               </div>
               <div className="btn">
+                <button onClick={() => navigate(`/product/${p.slug}`)}>
+                  More Details
+                </button>
                 <button>Add To Cart</button>
               </div>
             </div>
