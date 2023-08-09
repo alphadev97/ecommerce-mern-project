@@ -1,0 +1,69 @@
+@use "../../App.scss" as app;
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+
+  .cart-details {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .cart {
+    padding: 2rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .cart-item {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      .items {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin: 1rem 1rem;
+        // border: 1px solid app.$polic-blue;
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        .item-det {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          > h4 {
+            font-family: app.$font-ubuntu;
+            font-size: 2rem;
+            padding: 1rem 0;
+          }
+
+          > p {
+            font-family: app.$font-assistant;
+            font-size: 1.5rem;
+            font-weight: 500;
+          }
+
+          > button {
+            width: 40%;
+            padding: 0.5rem 0.6rem;
+            background-color: app.$polic-blue;
+            color: white;
+            cursor: pointer;
+            font-family: app.$font-ubuntu;
+            border: none;
+          }
+        }
+      }
+    }
+
+    .checkout {
+      width: 50%;
+    }
+  }
+}

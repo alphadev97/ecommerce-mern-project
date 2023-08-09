@@ -80,7 +80,7 @@ const ProductDetails = () => {
                 <button onClick={() => navigate(`/product/${p.slug}`)}>
                   More Details
                 </button>
-                <button>Add To Cart</button>
+                <button onClick={() => navigate("/cart")}>Add To Cart</button>
               </div>
             </div>
           ))}
