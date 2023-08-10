@@ -17,14 +17,21 @@ const Profile = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
-  // get user details
+  // get user data
+  useEffect(() => {
+    const { email, name, phone, address } = auth?.user;
+    setName(name);
+    setPhone(phone);
+    setEmail(email);
+    setAddress(address);
+  }, [auth?.user]);
 
   // Form Function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8080/api/v1/auth/register",
+      const { data } = await axios.put(
+        "http://localhost:8080/api/v1/auth/profile",
         {
           name,
           email,
@@ -33,6 +40,16 @@ const Profile = () => {
           address,
         }
       );
+      if (data?.error) {
+        toast.error(data?.error);
+      } else {
+        setAuth({ ...auth, user: data?.updatedUser });
+        let ls = localStorage.getItem("auth");
+        ls = JSON.parse(ls);
+        ls.user = data.updatedUser;
+        localStorage.setItem("auth", JSON.stringify(ls));
+        toast.success("Profile Updated Successfully");
+      }
     } catch (error) {
       console.log(error);
       toast.error("Something Went Wrong");
@@ -56,7 +73,6 @@ const Profile = () => {
                     placeholder="Enter Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    required
                   />
 
                   <input
@@ -64,7 +80,7 @@ const Profile = () => {
                     placeholder="Enter Your Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
+                    disabled
                   />
 
                   <input
@@ -72,7 +88,6 @@ const Profile = () => {
                     placeholder="Enter Your Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required
                   />
 
                   <input
@@ -80,7 +95,6 @@ const Profile = () => {
                     placeholder="Enter Your Phone No."
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    required
                   />
 
                   <input
@@ -88,7 +102,6 @@ const Profile = () => {
                     placeholder="Enter Your Address"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                    required
                   />
 
                   <button type="submit">Update</button>
