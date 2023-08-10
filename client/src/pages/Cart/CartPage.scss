@@ -64,6 +64,18 @@
 
     .checkout {
       width: 50%;
+
+      // buttons
+      button {
+        font-family: app.$font-assistant;
+        font-size: 1rem;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: none;
+        background-color: app.$polic-blue;
+        color: white;
+      }
     }
   }
 }

@@ -97,7 +97,11 @@ const CartPage = () => {
                     Update Address
                   </button>
                 ) : (
-                  <button>Please Login to Checkout</button>
+                  <button
+                    onClick={() => navigate("/login", { state: "/cart" })}
+                  >
+                    Please Login to Checkout
+                  </button>
                 )}
               </div>
             )}
