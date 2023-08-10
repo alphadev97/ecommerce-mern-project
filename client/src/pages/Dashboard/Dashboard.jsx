@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   return (
     <Layout title={"Dashboard - Alpha97 Ecommerce "}>
-      <div className="container">
+      <div className="dash-container">
         <div className="row">
           <div className="row-left">
             <UserMenu />
