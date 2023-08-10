@@ -10,6 +10,22 @@ const CartPage = () => {
   const [cart, setCart] = useCart();
   const navigate = useNavigate();
 
+  // total price
+  const totalPrice = () => {
+    try {
+      let total = 0;
+      cart?.map((item) => {
+        total = total + item.price;
+      });
+      return total.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // delete item
   const removeCartItem = (pid) => {
     try {
@@ -30,7 +46,7 @@ const CartPage = () => {
           <div className="cart-user">
             <h1>{`Hello ${auth?.token && auth?.user?.name}`}</h1>
             <h4>
-              {cart?.length > 1
+              {cart?.length
                 ? `You have ${cart.length} items in your cart ${
                     auth?.token ? "" : "please login to checkout"
                   }`
@@ -60,7 +76,10 @@ const CartPage = () => {
             ))}
           </div>
           <div className="checkout">
-            <h1>checkout</h1>
+            <h2>Cart Summary</h2>
+            <p>Total | Checkout | Payment</p>
+            <hr />
+            <h4>Total: {totalPrice()}</h4>
           </div>
         </div>
       </div>
