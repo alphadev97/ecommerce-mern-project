@@ -80,6 +80,27 @@ const CartPage = () => {
             <p>Total | Checkout | Payment</p>
             <hr />
             <h4>Total: {totalPrice()}</h4>
+            {auth?.user?.address ? (
+              <>
+                <div>
+                  <h4>Current Address</h4>
+                  <h5>{auth?.user?.address}</h5>
+                  <button onClick={() => navigate("/dashboard/user/profile")}>
+                    Update Address
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div>
+                {auth?.token ? (
+                  <button onClick={() => navigate("/dashboard/user/profile")}>
+                    Update Address
+                  </button>
+                ) : (
+                  <button>Please Login to Checkout</button>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
