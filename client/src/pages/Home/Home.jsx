@@ -7,6 +7,7 @@ import { Prices } from "../../components/Prices/Prices.jsx";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart";
 import { toast } from "react-hot-toast";
+import logo from "../../assets/hero.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -119,6 +120,23 @@ const Home = () => {
   };
   return (
     <Layout title={"All Products - Best Offers - Alpha97 E-Commerce"}>
+      <div className="hero">
+        <div className="hero-left">
+          <h1>Alpha97 E-Commerce</h1>
+          <p>
+            Crafted on the MERN Stack, our E-Commerce store embodies simplicity
+            and sophistication. Merging MongoDB, Express.js, React, and Node.js,
+            this platform seamlessly unites powerful database management, robust
+            back-end processes, dynamic front-end interfaces, and efficient
+            server-side operations. Through this convergence, we've established
+            a feature-rich and user-friendly online store that ensures seamless
+            shopping experiences across a wide array of products.
+          </p>
+        </div>
+        <div className="hero-right">
+          <img src={logo} alt="" />
+        </div>
+      </div>
       <div className="home">
         <div className="left">
           <h4>Filter By Category</h4>
