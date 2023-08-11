@@ -1,9 +1,51 @@
 @use "../../App.scss" as app;
 
-.container {
+.order-container {
   margin: 1rem;
   .row {
     display: flex;
     flex-direction: row;
+
+    .row-left {
+      width: 20%;
+    }
+
+    .row-right {
+      width: 80%;
+    }
   }
+}
+
+/* Apply basic styling to the table */
+.styled-table {
+  font-family: app.$font-assistant;
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+/* Style the table header */
+.styled-table th {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style the table rows */
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* Apply alternate row background color */
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+.styled-table tbody tr:hover {
+  background-color: #e0e0e0;
 }
