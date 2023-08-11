@@ -9,7 +9,7 @@ const AdminDashboard = () => {
 
   return (
     <Layout>
-      <div className="container">
+      <div className="admin-container">
         <div className="row">
           <div className="row-left">
             <AdminMenu />

@@ -1,0 +1,15 @@
+@use "../../App.scss" as app;
+
+.admin-orders {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+
+  .left {
+    display: flex;
+  }
+
+  .right {
+    width: 80%;
+  }
+}
