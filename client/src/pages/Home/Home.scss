@@ -87,17 +87,31 @@
     }
 
     .card-body {
-      padding: 1rem;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      padding: 2rem;
       text-align: center;
 
       .card-title {
-        font-size: 1.2rem;
+        font-family: app.$font-assistant;
+        font-size: 2rem;
         font-weight: 600;
+        padding: 1rem;
+      }
+
+      .card-price {
+        font-family: app.$font-ubuntu;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 1rem;
       }
 
       .card-text {
+        font-family: app.$font-assistant;
         font-size: 1rem;
-        color: app.$polic-blue;
+        color: black;
+        padding: 1rem;
       }
     }
     .btn {
@@ -139,10 +153,12 @@
 .reset-btn {
   padding: 0.5rem 0;
   font-family: app.$font-assistant;
-  font-size: 1rem;
-  background-color: red;
+  font-size: 1.2rem;
+  background-color: app.$polic-blue;
   color: white;
   cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
 }
 
 .pag {
@@ -151,12 +167,14 @@
   justify-content: center;
 
   .pag-btn {
+    width: 15rem;
+    padding: 0.5rem 0;
     font-family: app.$font-assistant;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    background-color: app.$gargo-gas;
-    border: 1px solid app.$polic-blue;
+    font-size: 1.2rem;
+    background-color: app.$polic-blue;
+    color: white;
     cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
   }
 }

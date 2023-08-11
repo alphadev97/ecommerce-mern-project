@@ -181,8 +181,8 @@ const Home = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
+                  <p className="card-price">${p.price}</p>
                   <p className="card-text">{p.description.substring(0, 30)}</p>
-                  <p className="card-text">${p.price}</p>
                 </div>
                 <div className="btn">
                   <button onClick={() => navigate(`/product/${p.slug}`)}>

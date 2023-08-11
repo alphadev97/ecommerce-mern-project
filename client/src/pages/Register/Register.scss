@@ -1,6 +1,6 @@
 @use "../../App.scss" as app;
 
-.register {
+.register-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,8 @@
     #f9d949
   );
 
-  form {
+  > form {
+    width: 50%;
     background-color: white;
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -28,32 +29,27 @@
     .container {
       display: flex;
       flex-direction: column;
+      width: 50%;
       gap: 1rem;
 
-      input {
+      > input {
+        width: 100%;
         padding: 0.5rem;
         font-size: 1rem;
         font-family: app.$font-assistant;
         outline: none;
         border: 1px solid rgba(0, 0, 0, 0.308);
         border-radius: 0.2rem;
+        margin: 0;
       }
 
-      button {
-        padding: 0.5rem;
-        font-size: 1rem;
-        font-family: app.$font-assistant;
-        outline: none;
-        cursor: pointer;
-        background-color: app.$polic-blue;
-        color: white;
-        border-radius: 0.2rem;
-        transition: all 0.5s ease;
-
+      > button {
+        width: 100%;
+        padding: 0rem 2rem;
+        margin: 0;
         &:hover {
-          background-color: app.$gargo-gas;
-          border: 1px solid app.$polic-blue;
-          color: app.$polic-blue;
+          background-color: app.$polic-blue;
+          color: white;
         }
       }
     }

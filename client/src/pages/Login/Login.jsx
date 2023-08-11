@@ -47,7 +47,7 @@ const Login = () => {
       <div className="login">
         <form onSubmit={handleSubmit}>
           <h1>Login Page</h1>
-          <div className="container">
+          <div className="login-container">
             <input
               type="email"
               placeholder="Enter Your Email Address"
@@ -65,6 +65,7 @@ const Login = () => {
             />
 
             <button
+              className="login-btn"
               type="button"
               onClick={() => {
                 navigate("/forgot-password");
@@ -73,7 +74,9 @@ const Login = () => {
               Forgot Password?
             </button>
 
-            <button type="submit">Login</button>
+            <button className="login-btn" type="submit">
+              Login
+            </button>
           </div>
         </form>
       </div>
