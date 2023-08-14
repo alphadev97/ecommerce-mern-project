@@ -33,11 +33,15 @@ The application has been successfully deployed and can be accessed at [Live Demo
 
 ## Main Repo
 
-` git clone https://github.com/alphadev97/ecommerce-mern-project`
+```
+git clone https://github.com/alphadev97/ecommerce-mern-project
+```
 
 ## Deployed Repo
 
-`git clone https://github.com/alphadev97/production-ecommerce-mern.git`
+```
+git clone https://github.com/alphadev97/production-ecommerce-mern.git
+```
 
 ## .env Variables
 
