@@ -13,7 +13,6 @@ Welcome to our Minimal E-Commerce Store built using the MERN (MongoDB, Express, 
 - Secure Payment Processing through Braintree
 - User Profile Management
 - Admin Dashboard for Product and Category Management
-- Responsive Design for Mobile and Desktop
 
 ## Deployment
 
